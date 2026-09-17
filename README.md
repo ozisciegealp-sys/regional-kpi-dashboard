@@ -1,5 +1,7 @@
 # Bölge KPI Kontrol Platformu
 
+*Excel platform that brings 16 operational KPIs of a multi-store region into one table, colour-codes them against targets and scores each store. Documentation in Turkish; all data is synthetic.*
+
 Çok mağazalı bir bölgenin satış, kârlılık, CRM, paket servis, ürün karması, fire, envanter, eğitim, personel devri, misafir şikâyeti ve denetim göstergelerini **tek tabloda**, hedefe göre renklendirilmiş olarak gösteren ve her mağazaya **100 üzerinden performans puanı** veren Excel platformu.
 
 > **Not:** Bu dosya, bir kahve zincirinde 16 mağazalık bölge için kurduğum ve her ay yürüttüğüm platformun **sahte veriyle yeniden kurulmuş sürümüdür**. Orijinali şirketin SharePoint ortamında çalışıyordu. Yapı (kaynak sayfalar, genel tablo, hedef satırı, dönem seçimi, performans puanı) orijinalden alınmıştır. Mağaza adları, rakamlar ve açıklamalar uydurmadır.
