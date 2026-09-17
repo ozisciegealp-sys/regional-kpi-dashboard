@@ -2,7 +2,7 @@
 
 Çok mağazalı bir bölgenin satış, kârlılık, CRM, paket servis, ürün karması, fire, envanter, eğitim, personel devri, misafir şikâyeti ve denetim göstergelerini **tek tabloda**, hedefe göre renklendirilmiş olarak gösteren ve her mağazaya **100 üzerinden performans puanı** veren Excel platformu.
 
-> **Not:** Bu dosya, bir kahve zincirinde 14–16 mağazalık bölge için kurduğum ve her ay yürüttüğüm platformun **sahte veriyle yeniden kurulmuş sürümüdür**. Orijinali şirketin SharePoint ortamında çalışıyordu. Yapı (kaynak sayfalar, genel tablo, hedef satırı, dönem seçimi, performans puanı) orijinalden alınmıştır. Mağaza adları, rakamlar ve açıklamalar uydurmadır.
+> **Not:** Bu dosya, bir kahve zincirinde 16 mağazalık bölge için kurduğum ve her ay yürüttüğüm platformun **sahte veriyle yeniden kurulmuş sürümüdür**. Orijinali şirketin SharePoint ortamında çalışıyordu. Yapı (kaynak sayfalar, genel tablo, hedef satırı, dönem seçimi, performans puanı) orijinalden alınmıştır. Mağaza adları, rakamlar ve açıklamalar uydurmadır.
 >
 > Performans puanındaki **katsayılar örnek değerdir**; orijinal sistemde her kalemin kendi katsayısı vardı. Hedef değerleri orijinal dosyadaki hedef satırından alınmıştır.
 
