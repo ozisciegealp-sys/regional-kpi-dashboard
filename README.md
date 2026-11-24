@@ -2,91 +2,63 @@
 
 **Türkçe** | [English](README.en.md)
 
-*Excel platform that brings 16 operational KPIs of a multi-store region into one table, colour-codes them against targets and scores each store. Full English documentation in [README.en.md](README.en.md); all data is synthetic.*
+Çok mağazalı bir bölgenin satış, P&L (kârlılık), CRM, paket servis, ürün karması, fire, envanter, eğitim, personel devri, müşteri şikâyeti ve denetim verilerini **tek tabloda** birleştiren, hedefe göre renklendirerek her mağazaya **100 üzerinden performans puanı** veren ve dönemler arası **Yıldızlar Ligi** sıralamasını üreten Excel platformu.
 
-Çok mağazalı bir bölgenin satış, kârlılık, CRM, paket servis, ürün karması, fire, envanter, eğitim, personel devri, misafir şikâyeti ve denetim göstergelerini **tek tabloda**, hedefe göre renklendirilmiş olarak gösteren ve her mağazaya **100 üzerinden performans puanı** veren Excel platformu.
-
-> **Not:** Bu dosya, bir kahve zincirinde 16 mağazalık bölge için kurduğum ve her ay yürüttüğüm platformun **sahte veriyle yeniden kurulmuş sürümüdür**. Orijinali şirketin SharePoint ortamında çalışıyordu. Yapı (kaynak sayfalar, genel tablo, hedef satırı, dönem seçimi, performans puanı) orijinalden alınmıştır. Mağaza adları, rakamlar ve açıklamalar uydurmadır.
->
-> Performans puanındaki **katsayılar örnek değerdir**; orijinal sistemde her kalemin kendi katsayısı vardı. Hedef değerleri orijinal dosyadaki hedef satırından alınmıştır.
+> **Gizlilik ve Sentetik Veri Notu:** Bu çalışma kitabı, 16 mağazalık bölge operasyonunda kurduğum ve aylık kontrollerini yürüttüğüm online Excel platformunun **tamamen sentetik (kurgu) veriyle** yeniden kurulmuş sürümüdür. Kurumsal gizlilik gereği hiçbir marka, gerçek mağaza adı veya finansal şirket verisi yer almaz; örnek dosyada 8 kurgu mağaza (`Mağaza A`–`Mağaza H`) ve 3 dönem (`P1`–`P3`) modellenmiştir.
 
 ## Hangi problemi çözüyor
 
-Bir mağazanın aylık durumu onlarca ayrı rapora dağılmış hâldedir: satış raporu, P&L, CRM raporu, paket servis platformu raporları, fire ve envanter raporları, eğitim tamamlama listesi, personel devri, şikâyet kayıtları, denetim sonuçları. Bu platform:
+Bir mağazanın aylık performansı normalde onlarca ayrı rapora dağılmış hâldedir: satış raporu, P&L tablosu, CRM raporu, paket servis platform verileri, fire ve envanter sayım sonuçları, eğitim tamamlama listeleri, İK personel devri, müşteri şikâyet kayıtları ve denetim raporları. Bu platform:
 
-- Her raporu kendi sayfasına alır ve mağaza + dönem anahtarıyla tek tabloda birleştirir.
-- Her göstergeyi hedefiyle karşılaştırıp yeşil/kırmızı gösterir.
-- Mağazaya hedefi tutan göstergelerin katsayıları toplamı kadar puan verir ve mağazaları sıralar. Orijinal sistemde bu puan mağaza müdürlerinin performans notuna dayanak oluyordu.
-- P&L sapmasının açıklamasını mağaza satırının yanında gösterir.
-
-Aylık bölge toplantısında sapmalar bu tablo üzerinden konuşulur, aksiyonlar yüz yüze belirlenir.
+- 11 ayrı kaynak raporu kendi sayfasına alır ve `Dönem|Mağaza` anahtarıyla tek genel tabloda birleştirir.
+- **16 puanlanan operasyonel KPI**'ı hedef eşikleriyle karşılaştırıp yeşil/kırmızı koşullu biçimlendirmeyle işaretler; yanında **5 bağlam göstergesini** (`ADT`, `Net Satış`, `Mağaza Katkısı TL`, `Paket Satış Payı %`, `Food Attach %`) aynı satırda sunar (toplam 21 gösterge sütunu).
+- Hedefi tutan KPI'ların ağırlık katsayılarını toplayarak her mağazaya 100 üzerinden performans puanı verir ve sıralar.
+- **`Yildizlar_Ligi`** sayfasında P1–P3 dönemlerinin kümülatif puan ortalamasını, mağaza ciro kademesini (`Tier 1–3`), son ay trendini ve lig grubunu (`Altın / Gümüş / Gelişim Ligi`) izler.
+- P&L sapma açıklamalarını doğrudan mağaza satırının yanında gösterir; aylık toplantıda sapmalar mağaza bazında aksiyona bağlanır.
 
 ## Öncesi
 
-Göstergeler, farklı kaynaklardan ayrı ayrı gelen e-postalardaki raporlara tek tek bakılarak takip ediliyordu.
+Göstergeler, farklı departmanlardan ayrı ayrı gelen rapor ve e-postalara tek tek bakılarak dağınık şekilde takip ediliyordu.
 
 ## Sayfalar
 
 | Sayfa | Ne yapar |
 |---|---|
-| `Nasil_Kullanilir` | Aylık akış, kısaltmalar, renk kodu |
-| `Genel_Tablo` | Dönem seçimi; her mağaza tek satırda 21 gösterge, hedef satırı, bölge satırı, puan, sıra, P&L sapma açıklaması |
-| `Hedefler` | Her göstergenin yönü (≥ / ≤), hedefi ve performans katsayısı |
-| `Performans_Puani` | Gösterge bazında kazanılan puan matrisi, toplam puan ve grafik |
-| `Satis` · `PnL` · `CRM` · `Paket_Servis` · `Urun_Karmasi` · `Fire_Envanter` · `Egitim` · `Personel` · `Kahve_Sohbeti` · `Sikayet` · `Denetim` | Kaynak raporların yapıştırıldığı sayfalar |
+| `Nasil_Kullanilir` | Aylık çalışma akışı, kısaltmalar ve renk kodu |
+| `Genel_Tablo` | Dönem seçimi (`P1–P12`); her mağaza tek satırda 16 puanlanan KPI + 5 bağlam göstergesi (21 sütun), hedef satırı, bölge özeti, puan, sıra ve P&L sapma açıklaması |
+| `Performans_Puani` | Seçili dönemde KPI bazında kazanılan puan matrisi, toplam puan ve karşılaştırma grafiği |
+| `Yildizlar_Ligi` | P1–P3 dönem puanları, dönem ortalaması, son ay trendi, ciro kademesi (`Tier`), lig grubu, kümülatif satış/kârlılık ve grafik |
+| `Hedefler` | Puanlanan 16 KPI'ın yönü (`≥` / `≤`), hedef eşiği ve 100 toplamlı ağırlık katsayıları |
+| `Satis` · `PnL` · `CRM` · `Paket_Servis` · `Urun_Karmasi` · `Fire_Envanter` · `Egitim` · `Personel` · `Kahve_Sohbeti` · `Sikayet` · `Denetim` | Kaynak sistem raporlarının yapıştırıldığı 11 veri sayfası |
 
-## Göstergeler ve hedefler
+## Puanlanan 16 KPI ve örnek hedefler
 
 | Grup | Gösterge | Hesap | Hedef |
 |---|---|---|---|
-| Satış | Satış bütçe sapması | net satış ÷ bütçe − 1 | ≥ %0 |
-| P&L | Mağaza katkısı (Line 12) bütçe sapması | (gerçekleşen − bütçe) ÷ \|bütçe\| | ≥ %0 |
-| CRM | CRM satış oranı | CRM satışı ÷ net satış | ≥ %14 |
-| Paket servis | İptal oranı | iki platformun iptali ÷ işlemi | ≤ %7 |
-| Paket servis | Platform açıklık oranı | iki platformun ortalaması | ≥ %90 |
-| Ürün karması | Origin espresso oranı | origin espresso ÷ espresso içecek | ≥ %18 |
-| Ürün karması | Food attach farkı | (yiyecek ÷ içecek) − geçen yıl | ≥ 0 |
-| Fire | Food mark-out oranı | mark-out ÷ yiyecek satışı | ≤ %8 |
-| Envanter | Sayım farkı | sayım farkı ÷ net satış | ≥ −%0,5 |
-| Ekip | Eğitim tamamlama | tamamlanan ÷ atanan | ≥ %95 |
-| Ekip | Turnover | yıl başından ayrılan ÷ ortalama çalışan | ≤ %50 |
-| Ekip | Kahve sohbeti farkı | yapılan − (çalışan × 0,2 × 2) | ≥ 0 |
-| Misafir | Şikâyet oranı | şikâyet ÷ işlem × 1.000 | ≤ 0,30 |
+| Satış | Satış bütçe sapması | net satış ÷ bütçe − 1 | ≥ %0,0 |
+| P&L | Mağaza katkısı (Line 12) bütçe sapması | (gerçekleşen − bütçe) ÷ \|bütçe\| | ≥ %0,0 |
+| CRM | CRM satış oranı | CRM satışı ÷ net satış | ≥ %14,0 |
+| Paket servis | İptal oranı | iki platform toplam iptali ÷ işlemi | ≤ %7,0 |
+| Paket servis | Platform açıklık oranı | iki platform açıklık ortalaması | ≥ %90,0 |
+| Ürün karması | Origin espresso oranı | origin espresso ÷ toplam espresso içecek | ≥ %18,0 |
+| Ürün karması | Food attach geçen yıla farkı | (yiyecek ÷ içecek) − geçen yıl oranı | ≥ %0,0 |
+| Fire | Food mark-out oranı | mark-out tutarı ÷ yiyecek satışı | ≤ %8,0 |
+| Envanter | Envanter sayım farkı | sayım farkı ÷ net satış | ≥ −%0,50 |
+| Ekip | Eğitim tamamlama oranı | tamamlanan ÷ atanan eğitim | ≥ %95 |
+| Ekip | Turnover (YTD) | yıl başından ayrılan ÷ ortalama çalışan | ≤ %50 |
+| Ekip | Ekip gelişim / kahve sohbeti farkı | yapılan − dönem hedefi | ≥ 0 |
+| Misafir | Şikâyet oranı | şikâyet adedi ÷ işlem × 1.000 | ≤ 0,30 |
 | Denetim | ASA (genel operasyon) | son denetim puanı | ≥ 90 |
 | Denetim | PAP (kayıp önleme) | son denetim puanı | ≥ 85 |
 | Denetim | RSA (gıda güvenliği) | son denetim puanı | ≥ 90 |
 
-Mağaza katkısı (Line 12), P&L'in son kalemidir: net satıştan satılan malın maliyeti, royalty, personel, kontrol edilebilir giderler, kira ve amortisman düşüldükten sonra kalan mağaza kârlılığı.
-
-## Performans puanı
-
-Her gösterge için hedef tuttuysa `Hedefler` sayfasındaki katsayı kadar puan, tutmadıysa 0 verilir. Katsayıların toplamı 100'dür; toplam 100 değilse `Hedefler` sayfası uyarır. Verisi olmayan gösterge puanlanmaz. `Genel_Tablo`'da puan 80 ve üzeri yeşil, 60 altı kırmızı görünür.
-
 ## Kullanım
 
-Makro yoktur, kurulum gerekmez. `bolge-kpi-platformu.xlsx` Excel 2010 ve sonrası ile LibreOffice'te açılır.
+Makro içermez; `bolge-kpi-platformu.xlsx` Excel 2010+ ve LibreOffice'te doğrudan açılır.
 
-1. Her ay sistem raporlarını ilgili kaynak sayfaya yapıştırın. Veri **B sütunundan** başlar: dönem kodu (P1–P12), mağaza adı, rapor sütunları. A sütunu anahtar formülüdür; yeni satırlara aşağı kopyalayın.
-2. `Genel_Tablo` > B1'den dönemi seçin.
-3. Toplantıda `Genel_Tablo` ve `Performans_Puani` üzerinden sapmaları değerlendirin.
-
-Örnek dosyada P1–P3 dönemleri ve 8 mağaza vardır.
-
-## Kendi verinize uyarlama
-
-| Nerede | Ne değiştirilir |
-|---|---|
-| `Genel_Tablo` A–B sütunları | Mağaza adları ve formatları; kaynak sayfalardaki yazımla aynı olmalı |
-| `Hedefler` | Hedefler, yönler, katsayılar |
-| Kaynak sayfalar | Rapor sütun sırası farklıysa `Genel_Tablo` formüllerindeki sütun harfleri |
-
-Yeni mağaza eklemek için `Genel_Tablo` ve `Performans_Puani` sayfalarında bir satırı kopyalayıp aşağıya ekleyin ve bölge satırının aralıklarını genişletin.
-
-## Sınırlar
-
-- Raporlar kaynak sistemlerden elle yapıştırılır; otomatik veri çekme yoktur.
-- Aksiyonlar toplantıda belirlendiği için dosyada aksiyon takip sayfası yoktur.
-- Yıl başından toplamlar (YTD) yalnızca turnover için kaynak raporda hazır gelir; diğer göstergeler seçilen ayın değeridir.
+1. Aylık kaynak raporları ilgili veri sayfalarına **B sütunundan** başlayarak yapıştırın ve A sütunundaki anahtar formülünü (`=B2&"|"&C2`) aşağı kopyalayın.
+2. `Genel_Tablo` > `B1` hücresinden dönemi (`P1`, `P2`, `P3`…) seçin.
+3. Aylık sapmaları `Genel_Tablo` ve `Performans_Puani`, kümülatif dönem gidişatını `Yildizlar_Ligi` üzerinden değerlendirin.
 
 ## Lisans
 
